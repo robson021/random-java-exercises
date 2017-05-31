@@ -9,9 +9,10 @@ public class ReverseStringTest {
 
 	@Test
 	public void reverseStringTest() {
-		ReverseString reverseString = new ReverseString();
-		String reversed1 = reverseString.reverseWithCharArray();
-		String reversed2 = reverseString.reverseWithStringBuilder();
+
+		final String text = "abcdef";
+		String reversed1 = ReverseString.reverseWithCharArray(text);
+		String reversed2 = ReverseString.reverseWithStringBuilder(text);
 
 		System.out.println(reversed1);
 		System.out.println(reversed2);

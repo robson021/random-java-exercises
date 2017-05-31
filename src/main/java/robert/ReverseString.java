@@ -2,14 +2,12 @@ package robert;
 
 public class ReverseString {
 
-	private static final String text = "abcde";
-
-	public String reverseWithStringBuilder() {
+	public static String reverseWithStringBuilder(String text) {
 		return new StringBuilder(text).reverse()
 				.toString();
 	}
 
-	public String reverseWithCharArray() {
+	public static String reverseWithCharArray(String text) {
 		char[] chars = text.toCharArray();
 		char[] reversed = new char[chars.length];
 
