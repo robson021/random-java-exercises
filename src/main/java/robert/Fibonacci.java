@@ -18,20 +18,17 @@ public class Fibonacci {
 	public static int doFib(int n) {
 		if ( n == 0 )
 			return 0;
-		if ( n == 1 || n == 2 )
-			return 1;
 
-		int a = 1;
+		int a = 0;
 		int b = 1;
 
-		int fib = 0;
-		for (int i = 1; i < n - 1; i++) {
-			fib = a + b;
-			int tmp = a;
-			a = b;
-			b = b + tmp;
+		for (int i = 1; i < n; i++) {
+			int tmp = b;
+			b = b + a;
+			a = tmp;
 		}
-		return fib;
+		return b;
+
 	}
 
 	public static int doFibWithRecursion(int n) {

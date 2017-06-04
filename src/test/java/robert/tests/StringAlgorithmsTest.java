@@ -29,4 +29,21 @@ public class StringAlgorithmsTest {
 		Assert.assertTrue(two);
 	}
 
+	@Test
+	public void internCheck() {
+		String a = "a" + "bc";
+		String b = "ab" + "c";
+		Assert.assertTrue(a == b);
+
+		Assert.assertTrue(a.equals(b));
+
+		b = new String("abc");
+		Assert.assertFalse(a == b);
+		Assert.assertTrue(a.equals(b));
+
+		b = b.intern();
+		Assert.assertTrue(a == b);
+
+	}
+
 }
