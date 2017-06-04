@@ -13,6 +13,7 @@ public class ArrayOperationsTest {
 	public void findDuplicate() {
 		int[] arr = new int[1_000_000];
 
+		// values:   [1, n]; n > 0
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = i + 1;
 		}

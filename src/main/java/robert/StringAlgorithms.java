@@ -14,7 +14,7 @@ public class StringAlgorithms {
 		for (int i = chars.length - 1, j = 0; i >= 0; i--) {
 			reversed[j++] = chars[i];
 		}
-		return new String(reversed);
+		return new String(reversed).intern();
 	}
 
 	public static boolean doesSentenceStartsWithLowercaseLetter(String text) {
