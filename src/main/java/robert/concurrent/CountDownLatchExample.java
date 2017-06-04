@@ -7,7 +7,8 @@ public class CountDownLatchExample {
 	private CountDownLatch latch = new CountDownLatch(5);
 
 	public void countDownLatchExample() throws InterruptedException {
-		for (int i = 0; i < latch.getCount(); i++) {
+		final long count = latch.getCount();
+		for (int i = 0; i < count; i++) {
 			new Thread(new Task()).start();
 		}
 		System.out.println("awaiting for tasks...");
@@ -16,12 +17,11 @@ public class CountDownLatchExample {
 	}
 
 	private class Task implements Runnable {
-
 		@Override
 		public void run() {
 			System.out.println("task start");
 			try {
-				Thread.sleep(150);
+				Thread.sleep(100);
 			} catch (InterruptedException ignored) {
 			}
 			System.out.println("task end");
