@@ -4,6 +4,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Random;
 
+@SuppressWarnings("Duplicates")
 public class ProducerConsumer2 {
 
 	private static final int SIZE_LIMIT = 10;
