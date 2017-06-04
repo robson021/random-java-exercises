@@ -12,4 +12,11 @@ public class Factorial {
 
 	}
 
+	public static int doRecursiveFactorial(int n) {
+		if ( n == 1 )
+			return 1;
+
+		return n * doRecursiveFactorial(n - 1);
+	}
+
 }

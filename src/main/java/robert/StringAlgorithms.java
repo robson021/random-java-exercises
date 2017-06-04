@@ -18,8 +18,8 @@ public class StringAlgorithms {
 	}
 
 	public static boolean doesSentenceStartsWithLowercaseLetter(String text) {
-		int ascii = text.charAt(0);
-		return ascii >= 97;
-
+		//int ascii = text.charAt(0);
+		//return ascii >= 97;
+		return Character.isLowerCase(text.codePointAt(0));
 	}
 }

@@ -9,8 +9,13 @@ public class FactorialTest {
 
 	@Test
 	public void factorialTest() {
-		int result = Factorial.doFactorial(5);
-		Assert.assertEquals(120, result);
+		final int n = 5;
+		final int result = 120;
+		int r = Factorial.doFactorial(n);
+		Assert.assertEquals(r, result);
+
+		r = Factorial.doRecursiveFactorial(n);
+		Assert.assertEquals(r, result);
 	}
 
 }
