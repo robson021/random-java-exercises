@@ -15,9 +15,7 @@ public class ArrayOperations {
 
 	public static int findDuplicateNumberInArray(int[] arr) {
 		boolean[] truthArray = new boolean[arr.length + 1];
-
-		for (int i = 0; i < arr.length; i++) {
-			int value = arr[i];
+		for (int value : arr) {
 			if ( truthArray[value] )
 				return value;
 
