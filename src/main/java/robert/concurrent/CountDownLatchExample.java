@@ -4,29 +4,29 @@ import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchExample {
 
-	private CountDownLatch latch = new CountDownLatch(5);
+    private CountDownLatch latch = new CountDownLatch(5);
 
-	public void countDownLatchExample() throws InterruptedException {
-		final long count = latch.getCount();
-		for (int i = 0; i < count; i++) {
-			new Thread(new Task()).start();
-		}
-		System.out.println("awaiting for tasks...");
-		latch.await();
-		System.out.println("task finished");
-	}
+    public void countDownLatchExample() throws InterruptedException {
+        final long count = latch.getCount();
+        for (int i = 0; i < count; i++) {
+            new Thread(new Task()).start();
+        }
+        System.out.println("awaiting for tasks...");
+        latch.await();
+        System.out.println("task finished");
+    }
 
-	private class Task implements Runnable {
-		@Override
-		public void run() {
-			System.out.println("task start");
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException ignored) {
-			}
-			System.out.println("task end");
-			latch.countDown();
-		}
-	}
+    private class Task implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("task start");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ignored) {
+            }
+            System.out.println("task end");
+            latch.countDown();
+        }
+    }
 
 }
