@@ -4,13 +4,13 @@ import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchExample {
 
-    private CountDownLatch latch = new CountDownLatch(5);
+    private final CountDownLatch latch = new CountDownLatch(5);
 
     public void countDownLatchExample() throws InterruptedException {
-        final long count = latch.getCount();
-        for (int i = 0; i < count; i++) {
+        long count = latch.getCount();
+        for (long i = 0; i < count; i++)
             new Thread(new Task()).start();
-        }
+
         System.out.println("awaiting for tasks...");
         latch.await();
         System.out.println("task finished");

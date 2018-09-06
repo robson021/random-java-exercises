@@ -30,6 +30,7 @@ public class SemaphoreExample {
         } finally {
             ++entranceCount;
             semaphore.release();
+            System.out.println("Released semaphore, available now: " + semaphore.availablePermits());
         }
     }
 

@@ -11,7 +11,7 @@ public class ProducerConsumer2 {
 
     private static final int ALL_ELEMENTS_SIZE = 100;
 
-    private Deque<Integer> list = new LinkedList<>();
+    private final Deque<Integer> list = new LinkedList<>();
 
     private final Object locker = new Object();
 
