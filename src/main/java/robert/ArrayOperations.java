@@ -13,7 +13,7 @@ public class ArrayOperations {
         return -1;
     }
 
-    public static int findDuplicateNumberInArray(int[] arr) {
+    public static int findDuplicateNumberInSortedArray(int[] arr) {
         boolean[] truthArray = new boolean[arr.length + 1];
         for (int value : arr) {
             if (truthArray[value])
@@ -32,6 +32,16 @@ public class ArrayOperations {
                 arr[i] = 0;
             }
         }
+    }
+
+    public static int findMissingElementInSpan(int[] arr) {
+        int expectedSum = 0;
+        int actualSum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            expectedSum += i;
+            actualSum += arr[i];
+        }
+        return expectedSum - actualSum;
     }
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")

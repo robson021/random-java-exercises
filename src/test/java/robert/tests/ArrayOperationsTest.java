@@ -6,6 +6,7 @@ import robert.ArrayOperations;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class ArrayOperationsTest {
 
@@ -26,7 +27,7 @@ public class ArrayOperationsTest {
         shuffle(arr);
 
         long start = System.currentTimeMillis();
-        int duplicate = ArrayOperations.findDuplicateNumberInArray(arr);
+        int duplicate = ArrayOperations.findDuplicateNumberInSortedArray(arr);
         long end = System.currentTimeMillis();
 
         System.out.println("time 1 (truth array): " + (end - start) + " ms");
@@ -55,6 +56,16 @@ public class ArrayOperationsTest {
             ArrayOperations.removeDuplicates(arr);
             System.out.println("After:" + Arrays.toString(arr));
         }
+    }
+
+    @Test
+    public void findMissingElementInSpan() {
+        int[] arr = IntStream.range(0, 100).toArray();
+        int toRemove = 55;
+        arr[toRemove] = 0;
+        shuffle(arr);
+        int missingElem = ArrayOperations.findMissingElementInSpan(arr);
+        Assert.assertEquals(toRemove, missingElem);
     }
 
     @Test
