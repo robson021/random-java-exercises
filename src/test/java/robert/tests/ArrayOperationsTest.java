@@ -81,6 +81,17 @@ public class ArrayOperationsTest {
         ArrayOperations.findPairOfNumbersWhoseSumIsEqualToGivenNumber(arr, 11);
     }
 
+    @Test
+    public void findMissingNumbersInArrayWithPossibleDuplicates() {
+        int[] input = {0, 1, 2, 3, 5, 5, 7, 9, 9, 9};
+
+        Integer[] result = ArrayOperations.findMissingNumbersInArrayWithPossibleDuplicates(input);
+
+        Integer[] expected = {4, 6, 8};
+
+        Assert.assertArrayEquals(expected, result);
+    }
+
     private void shuffle(int[] arr) {
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {

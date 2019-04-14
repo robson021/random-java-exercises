@@ -1,5 +1,6 @@
 package robert;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayOperations {
@@ -76,6 +77,27 @@ public class ArrayOperations {
                     System.out.println("Found pair: " + a + " and " + b);
             }
         }
+    }
+
+    public static Integer[] findMissingNumbersInArrayWithPossibleDuplicates(int[] array) {
+        if (array.length < 1)
+            throw new RuntimeException("Array is empty");
+
+        boolean[] truthArray = new boolean[array.length];
+
+        for (int element : array) {
+            truthArray[element] = true;
+        }
+
+        var result = new ArrayList<Integer>();
+
+        for (int i = 0; i < truthArray.length; i++) {
+            if (!truthArray[i]) {
+                result.add(i);
+            }
+        }
+
+        return result.toArray(new Integer[0]);
     }
 
 }

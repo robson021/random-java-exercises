@@ -42,7 +42,17 @@ public class StringAlgorithmsTest {
 
         b = b.intern();
         Assert.assertTrue(a == b);
+    }
 
+    @Test
+    public void isStringRotationOfAnother() {
+        boolean one = StringAlgorithms.isStringRotationOfAnother("abcd", "dabc");
+        boolean two = StringAlgorithms.isStringRotationOfAnother("abc", "cab");
+        boolean three = StringAlgorithms.isStringRotationOfAnother("abc", "bac");
+
+        Assert.assertTrue(one);
+        Assert.assertTrue(two);
+        Assert.assertFalse(three);
     }
 
 }

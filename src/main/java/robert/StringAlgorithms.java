@@ -21,4 +21,16 @@ public class StringAlgorithms {
         //return ascii >= 97;
         return Character.isLowerCase(text.codePointAt(0));
     }
+
+    public static boolean isStringRotationOfAnother(String base, String rotated) {
+        if (base == null || rotated == null)
+            return false;
+
+        String concatenated = rotated.concat(rotated);
+        return concatenated.contains(base);
+    }
+
+    /*public static boolean isStringRotationOfAnother2(String base, String rotated) {
+        // todo
+    }*/
 }
