@@ -1,5 +1,8 @@
 package robert;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class StringAlgorithms {
 
     public static String reverseTextWithStringBuilder(String text) {
@@ -23,14 +26,38 @@ public class StringAlgorithms {
     }
 
     public static boolean isStringRotationOfAnother(String base, String rotated) {
-        if (base == null || rotated == null)
+        if (areStringsEmpty(base, rotated)) {
             return false;
-
+        }
         String concatenated = rotated.concat(rotated);
         return concatenated.contains(base);
     }
 
-    /*public static boolean isStringRotationOfAnother2(String base, String rotated) {
-        // todo
-    }*/
+    public static boolean isStringRotationOfAnother2(String base, String rotated) {
+        if (areStringsEmpty(base, rotated)) {
+            return false;
+        }
+
+        int ascii = base.codePointAt(0);
+        int index = rotated.indexOf(ascii);
+
+        if (index == -1) {
+            return false;
+        }
+
+        if (rotated.contains(base)) {
+            return true;
+        }
+
+        String prefix = rotated.substring(index);
+        String suffix = rotated.substring(0, index);
+
+        String word = prefix + suffix;
+
+        return base.equals(word);
+    }
+
+    private static boolean areStringsEmpty(String... strings) {
+        return Arrays.stream(strings).anyMatch(Objects::isNull);
+    }
 }

@@ -46,9 +46,19 @@ public class StringAlgorithmsTest {
 
     @Test
     public void isStringRotationOfAnother() {
+        // I
         boolean one = StringAlgorithms.isStringRotationOfAnother("abcd", "dabc");
         boolean two = StringAlgorithms.isStringRotationOfAnother("abc", "cab");
         boolean three = StringAlgorithms.isStringRotationOfAnother("abc", "bac");
+
+        Assert.assertTrue(one);
+        Assert.assertTrue(two);
+        Assert.assertFalse(three);
+
+        // II
+        one = StringAlgorithms.isStringRotationOfAnother2("abcd", "dabc");
+        two = StringAlgorithms.isStringRotationOfAnother2("abc", "cab");
+        three = StringAlgorithms.isStringRotationOfAnother2("abc", "bac");
 
         Assert.assertTrue(one);
         Assert.assertTrue(two);
