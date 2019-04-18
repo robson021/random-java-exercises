@@ -7,8 +7,17 @@ import robert.StringAlgorithms;
 public class StringAlgorithmsTest {
 
     @Test
-    public void reverseStringTest() {
+    public void countOccurrencesOfChar() {
+        Assert.assertEquals(4, StringAlgorithms.countOccurrencesOfChar("ala ma kota", 'a'));
+        Assert.assertEquals(2, StringAlgorithms.countOccurrencesOfChar("kotek ma ale", 'e'));
+        Assert.assertEquals(13, StringAlgorithms.countOccurrencesOfChar(
+                "Write a program to count the number of occurrences of a character in String",
+                ' ')
+        );
+    }
 
+    @Test
+    public void reverseStringTest() {
         final String text = "abcdef";
         String reversed1 = StringAlgorithms.reverseTextWithCharArray(text);
         String reversed2 = StringAlgorithms.reverseTextWithStringBuilder(text);

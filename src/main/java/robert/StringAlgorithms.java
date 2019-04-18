@@ -5,6 +5,24 @@ import java.util.Objects;
 
 public class StringAlgorithms {
 
+    public static int countOccurrencesOfChar(String input, char c) {
+        if (input == null || input.isEmpty()) {
+            throw new RuntimeException("Empty string");
+        }
+
+        int counter = 0;
+
+        char[] chars = input.toCharArray();
+        for (int ascii : chars) {
+            if (c == ascii) {
+                ++counter;
+            }
+        }
+
+        return counter;
+
+    }
+
     public static String reverseTextWithStringBuilder(String text) {
         return new StringBuilder(text).reverse().toString();
     }
@@ -26,7 +44,7 @@ public class StringAlgorithms {
     }
 
     public static boolean isStringRotationOfAnother(String base, String rotated) {
-        if (areStringsEmpty(base, rotated)) {
+        if (areStringsNull(base, rotated)) {
             return false;
         }
         String concatenated = rotated.concat(rotated);
@@ -34,7 +52,7 @@ public class StringAlgorithms {
     }
 
     public static boolean isStringRotationOfAnother2(String base, String rotated) {
-        if (areStringsEmpty(base, rotated)) {
+        if (areStringsNull(base, rotated)) {
             return false;
         }
 
@@ -57,7 +75,7 @@ public class StringAlgorithms {
         return base.equals(word);
     }
 
-    private static boolean areStringsEmpty(String... strings) {
+    private static boolean areStringsNull(String... strings) {
         return Arrays.stream(strings).anyMatch(Objects::isNull);
     }
 }
