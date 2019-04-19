@@ -19,6 +19,14 @@ public class Numbers {
         System.out.println("reversed input: " + reversed);
 
         return reversed == copyOfNumber;
+    }
 
+    public static void floydTriangle(int rows) {
+        for (int i = 1, number = 0; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(++number + " ");
+            }
+            System.out.println();
+        }
     }
 }

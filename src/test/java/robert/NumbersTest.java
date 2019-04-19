@@ -21,4 +21,13 @@ public class NumbersTest {
         assertFalse(Numbers.isNumberPalindrome(102));
         assertFalse(Numbers.isNumberPalindrome(13321));
     }
+
+    @Test
+    public void floydTriangle() {
+        Numbers.floydTriangle(5);
+
+        System.out.println();
+
+        Numbers.floydTriangle(9);
+    }
 }
