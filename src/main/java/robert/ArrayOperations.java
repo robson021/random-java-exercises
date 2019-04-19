@@ -2,8 +2,22 @@ package robert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
 public class ArrayOperations {
+
+    public static <T> List<T> removeDuplicates(List<T> list) {
+        // use LinkedHashSet to maintain original order of elements
+
+        System.out.println("input: " + list);
+        var set = new HashSet<>(list);
+
+        var filtered = new ArrayList<>(set);
+        System.out.println("without duplicates: " + filtered);
+
+        return filtered;
+    }
 
     public static int findDuplicateNumberInArrayWithSorting(int[] arr) {
         Arrays.sort(arr);
@@ -47,11 +61,11 @@ public class ArrayOperations {
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")
     public static void printMinAndMaxUsingStreams(int[] arr) {
-        int max = Arrays.stream(arr).max().getAsInt();
         int min = Arrays.stream(arr).min().getAsInt();
+        int max = Arrays.stream(arr).max().getAsInt();
         System.out.println("Min/Max using stream:");
-        System.out.println("Max: " + max);
         System.out.println("Min: " + min);
+        System.out.println("Max: " + max);
     }
 
     public static void printMinAndMaxUsingLoop(int[] arr) {

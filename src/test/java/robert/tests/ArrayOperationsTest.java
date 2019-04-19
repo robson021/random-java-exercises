@@ -5,6 +5,7 @@ import org.junit.Test;
 import robert.ArrayOperations;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
@@ -56,6 +57,14 @@ public class ArrayOperationsTest {
             ArrayOperations.removeDuplicates(arr);
             System.out.println("After:" + Arrays.toString(arr));
         }
+    }
+
+    @Test
+    public void removeDuplicatesFromList() {
+        List<String> list = Arrays.asList("aaa", "bbbb", "ccc", "aaa", "ddd");
+        List<String> result = ArrayOperations.removeDuplicates(list);
+
+        Assert.assertEquals(4, result.size());
     }
 
     @Test
