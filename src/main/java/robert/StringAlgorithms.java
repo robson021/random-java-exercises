@@ -1,9 +1,28 @@
 package robert;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.Objects;
 
 public class StringAlgorithms {
+
+    public static char findFirstNonRepeatedCharacter1(String s) {
+        var map = new LinkedHashMap<Character, Integer>();
+        for (char c : s.toCharArray()) {
+            map.merge(c, 1, (x, y) -> ++x);
+        }
+
+        char character = map.entrySet()
+                .stream()
+                .filter(e -> e.getValue() == 1)
+                .findFirst()
+                .orElseThrow()
+                .getKey();
+
+        System.out.println("First unique char in sentence '" + s + "' is: " + character);
+
+        return character;
+    }
 
     public static int countOccurrencesOfChar(String input, char c) {
         if (input == null || input.isEmpty()) {

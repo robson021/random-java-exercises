@@ -7,6 +7,14 @@ import robert.StringAlgorithms;
 public class StringAlgorithmsTest {
 
     @Test
+    public void findFirstNonRepeatedCharacter1() {
+        Assert.assertEquals('b', StringAlgorithms.findFirstNonRepeatedCharacter1("abcdefghija"));
+        Assert.assertEquals('h', StringAlgorithms.findFirstNonRepeatedCharacter1("hello"));
+        Assert.assertEquals('J', StringAlgorithms.findFirstNonRepeatedCharacter1("Java"));
+        Assert.assertEquals('i', StringAlgorithms.findFirstNonRepeatedCharacter1("simplest"));
+    }
+
+    @Test
     public void countOccurrencesOfChar() {
         Assert.assertEquals(4, StringAlgorithms.countOccurrencesOfChar("ala ma kota", 'a'));
         Assert.assertEquals(2, StringAlgorithms.countOccurrencesOfChar("kotek ma ale", 'e'));
