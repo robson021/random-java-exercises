@@ -6,6 +6,38 @@ import java.util.Objects;
 
 public class StringAlgorithms {
 
+    public static boolean isAnagram1(String first, String second) {
+        if (first.length() != second.length()) {
+            return false;
+        }
+
+        char[] chars1 = first.toLowerCase().toCharArray();
+        char[] chars2 = second.toLowerCase().toCharArray();
+
+        Arrays.sort(chars1);
+        Arrays.sort(chars2);
+
+        return Arrays.equals(chars1, chars2);
+    }
+
+    public static boolean isAnagram2(String first, String second) {
+        if (first.length() != second.length()) {
+            return false;
+        }
+
+        StringBuilder sb = new StringBuilder(second.toLowerCase());
+
+        for (char c : first.toLowerCase().toCharArray()) {
+            int index = sb.indexOf("" + c);
+            if (index == -1) {
+                return false;
+            }
+            sb.deleteCharAt(index);
+        }
+
+        return sb.length() == 0;
+    }
+
     public static char findFirstNonRepeatedCharacter1(String s) {
         var map = new LinkedHashMap<Character, Integer>();
         for (char c : s.toCharArray()) {

@@ -7,6 +7,19 @@ import robert.StringAlgorithms;
 public class StringAlgorithmsTest {
 
     @Test
+    public void isAnagram() {
+        Assert.assertTrue(StringAlgorithms.isAnagram1("x", "x"));
+        Assert.assertTrue(StringAlgorithms.isAnagram1("abcde", "edcba"));
+        Assert.assertTrue(StringAlgorithms.isAnagram1("qweewq", "eewqqw"));
+        Assert.assertFalse(StringAlgorithms.isAnagram1("qweewq", "eewqqxw"));
+
+        Assert.assertTrue(StringAlgorithms.isAnagram2("x", "x"));
+        Assert.assertTrue(StringAlgorithms.isAnagram2("abcde", "edcba"));
+        Assert.assertTrue(StringAlgorithms.isAnagram2("qweewq", "eewqqw"));
+        Assert.assertFalse(StringAlgorithms.isAnagram2("qweewq", "eewqqxw"));
+    }
+
+    @Test
     public void findFirstNonRepeatedCharacter1() {
         Assert.assertEquals('b', StringAlgorithms.findFirstNonRepeatedCharacter1("abcdefghija"));
         Assert.assertEquals('h', StringAlgorithms.findFirstNonRepeatedCharacter1("hello"));
